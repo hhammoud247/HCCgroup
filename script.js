@@ -50,6 +50,9 @@ const translations = {
     }
 };
 
+// Initialize EmailJS with your user ID
+emailjs.init('YOUR_USER_ID'); // Replace with your EmailJS user ID
+
 // Switch language function
 function switchLanguage(lang) {
     document.querySelectorAll("[data-lang-key]").forEach(element => {
@@ -80,4 +83,19 @@ document.getElementById("language-switcher")?.addEventListener("change", functio
 // Set default language on page load
 document.addEventListener("DOMContentLoaded", () => {
     switchLanguage("en"); // Default language is English
+});
+
+// Contact form submission handling with EmailJS
+document.getElementById('contact-form')?.addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent default form submission
+
+    // Send the form data to EmailJS
+    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this) // Replace with your Service ID and Template ID
+        .then(function(response) {
+            console.log('Success:', response);
+            alert('Your message has been sent!');
+        }, function(error) {
+            console.log('Error:', error);
+            alert('Oops! Something went wrong.');
+        });
 });
