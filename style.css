@@ -19,24 +19,25 @@ header {
     padding: 1rem 0;
     position: fixed;
     top: 0;
-    left: 0; /* Ensure the header spans the full width */
+    left: 0;
     width: 100%;
     z-index: 1000;
-    display: flex; /* Use flexbox for horizontal alignment */
-    align-items: center; /* Vertically center the content */
-    justify-content: space-between; /* Ensure space between logo and navigation */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Added shadow for more contrast */
 }
 
 header .logo-container {
-    display: flex; /* Flexbox to align the logo and text horizontally */
-    align-items: center; /* Vertically center the logo and text */
+    display: flex;
+    align-items: center;
     margin-left: 1rem;
 }
 
 header .logo-image {
-    max-width: 100px; /* Adjust size of the logo */
+    max-width: 100px;
     height: auto;
-    margin-right: 10px; /* Space between the logo and text */
+    margin-right: 10px;
 }
 
 header .logo {
@@ -49,20 +50,21 @@ header .logo {
 /* Navigation Styling */
 header nav ul {
     list-style: none;
-    display: flex; /* Use flexbox for the navigation */
+    display: flex;
     margin-right: 1rem;
 }
 
 header nav ul li {
-    display: inline;
     margin-left: 1rem;
 }
 
-header nav ul li a, #language-switcher {
+header nav ul li a,
+#language-switcher {
     color: #fff;
     text-decoration: none;
     padding: 0.5rem;
     font-size: 1rem;
+    transition: background 0.3s ease; /* Smooth hover effect */
 }
 
 header nav ul li a:hover {
@@ -97,4 +99,37 @@ footer {
     color: #fff;
     padding: 1rem 0;
     margin-top: 2rem;
+}
+
+/* Media Query for Mobile */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    header .logo-container {
+        margin-left: 0;
+        margin-bottom: 1rem;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    header nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    header nav ul li a {
+        font-size: 1.2rem;
+        padding: 0.8rem;
+    }
+
+    /* Adjust the language switcher position */
+    #language-switcher {
+        margin-top: 1rem;
+    }
 }
