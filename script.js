@@ -51,7 +51,7 @@ const translations = {
 };
 
 // Initialize EmailJS with your user ID
-emailjs.init('YOUR_USER_ID'); // Replace with your EmailJS user ID
+emailjs.init('HCCGROUP247'); // Replace with your EmailJS user ID
 
 // Switch language function
 function switchLanguage(lang) {
@@ -90,7 +90,7 @@ document.getElementById('contact-form')?.addEventListener('submit', function(eve
     event.preventDefault(); // Prevent default form submission
 
     // Send the form data to EmailJS
-    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this) // Replace with your Service ID and Template ID
+    emailjs.sendForm('HCCGROUP247', 'template_bcvj1l5', this) // Replace with your Service ID and Template ID
         .then(function(response) {
             console.log('Success:', response);
             alert('Your message has been sent!');
